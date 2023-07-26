@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Eshop{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Eshop <b>{{user.username | upper}}</b> </h1>
+        <p class="lead">Discover the best deals on our wide range of products.</p>
+        <hr class="my-4">
+        <p>We have everything you need for your online shopping experience.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Start Shopping</a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Product 1</h5>
+                    <p class="card-text">Description of Product 1.</p>
+                    <p class="card-text"><strong>Price: $20</strong></p>
+                    <p class="card-text">Ratings: 4.5/5</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                    <!-- Add to Cart button -->
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product 2">
+                <div class="card-body">
+                    <h5 class="card-title">Product 2</h5>
+                    <p class="card-text">Description of Product 2.</p>
+                    <p class="card-text"><strong>Price: $25</strong></p>
+                    <p class="card-text">Ratings: 4.2/5</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                    <!-- Add to Cart button -->
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product 3">
+                <div class="card-body">
+                    <h5 class="card-title">Product 3</h5>
+                    <p class="card-text">Description of Product 3.</p>
+                    <p class="card-text"><strong>Price: $30</strong></p>
+                    <p class="card-text">Ratings: 4.8/5</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                    <!-- Add to Cart button -->
+                    <a href="#" class="btn btn-success">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

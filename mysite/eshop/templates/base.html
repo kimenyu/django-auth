@@ -1,0 +1,79 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Eshop{% endblock %}</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">Eshop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <!-- Categories Dropdown -->
+                <li class="nav-item dropdown">
+                    <!-- ... (previous category dropdown code) ... -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Deals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">What's New</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Delivery</a>
+                </li>
+            </ul>
+            <!-- Search Form -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+                <!-- User is Logged In -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown"> <!-- Account Dropdown -->
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAccount" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Account
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownAccount">
+                            
+                            <a class="dropdown-item" href="{% url 'profile' username=request.user.username %}">Personal Info</a>
+                            <a class="dropdown-item" href="#">Bills & Payments</a>
+                            <a class="dropdown-item" href="#">Order History</a>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                            <!-- Add more account options here -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cart</a>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        {% include 'eshop/messaging.html' %}
+        {% block content %}
+        <!-- Page-specific content goes here -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">Eshop &copy; {% now "Y" %}</span>
+        </div>
+    </footer>
+
+    <!-- Add Bootstrap JS and other scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
